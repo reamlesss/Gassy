@@ -12,30 +12,137 @@
 </head>
 <body>
     <div class="app-shell">
-        <aside class="sidebar">
-            <div class="brand-lockup"><div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div><span class="brand-name">gassy</span></div>
-            <div class="sidebar-section-label">Workspace</div>
-            <nav class="main-nav" aria-label="Main navigation"><a class="nav-item active" href="#overview"><span class="nav-icon">▦</span> Overview</a><a class="nav-item" href="#entries"><span class="nav-icon">↗</span> All entries</a></nav>
-            <div class="sidebar-spacer"></div>
-            <div class="sidebar-note"><span class="note-dot"></span><div><strong>2 cards connected</strong><small>10,000 Kč combined limit</small></div></div>
-            <div class="profile-row"><div class="avatar">VV</div><div><strong>Vaclav Vondracek</strong><small>Personal account</small></div><span class="more-icon">•••</span></div>
-        </aside>
         <main class="main-content" id="overview">
-            <header class="topbar"><div class="mobile-brand"><div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div><span class="brand-name">gassy</span></div><div class="breadcrumb"><span>Workspace</span><b>/</b><strong>Overview</strong></div><div class="topbar-actions"><button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="sun-icon">☼</span><span class="moon-icon">☾</span></button><button class="icon-button" aria-label="Notifications">♧<i></i></button><button class="user-menu">VV <span>⌄</span></button></div></header>
+            <header class="topbar">
+                <div class="brand-wrap">
+                    <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <span class="brand-name">gassy</span>
+                </div>
+                <div class="topbar-meta">
+                    <span class="eyebrow">September 2026</span>
+                    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                        <span class="sun-icon">☼</span>
+                        <span class="moon-icon">☾</span>
+                    </button>
+                </div>
+            </header>
+
             <div class="content-wrap">
-                <section class="intro-row"><div><p class="eyebrow">Sunday, 20 September 2026</p><h1>Good morning, Vaclav<span>.</span></h1><p class="intro-copy">Keep your fuel spending in sight.</p></div><button class="primary-button" type="button"><span>＋</span> Add entry</button></section>
-                <section class="limit-section" aria-labelledby="limit-heading"><div class="section-heading"><div><p class="eyebrow">September 2026</p><h2 id="limit-heading">Card limits</h2></div><button class="text-button" type="button">Manage cards <span>→</span></button></div><div class="limit-grid">
-                    <article class="limit-card shell-card" data-card="shell"><div class="limit-card-top"><div class="station-logo shell-logo">S<span>hell</span></div><span class="status-pill"><i></i> Active</span></div><div class="amount-row"><strong class="card-used">0</strong><span>/ 5,000 Kč</span></div><div class="progress-track"><div class="progress-fill shell-fill"></div></div><div class="limit-meta"><span class="card-remaining">5,000 Kč remaining</span><span class="card-percent">0%</span></div></article>
-                    <article class="limit-card orlen-card" data-card="orlen"><div class="limit-card-top"><div class="station-logo orlen-logo">ORLEN</div><span class="status-pill"><i></i> Active</span></div><div class="amount-row"><strong class="card-used">0</strong><span>/ 5,000 Kč</span></div><div class="progress-track"><div class="progress-fill orlen-fill"></div></div><div class="limit-meta"><span class="card-remaining">5,000 Kč remaining</span><span class="card-percent">0%</span></div></article>
-                    <div class="combined-total"><span class="total-label">Combined used</span><strong id="combined-used">0 <small>Kč</small></strong><span class="total-caption" id="combined-caption">0% of 10,000 Kč monthly limit</span></div>
-                </div></section>
-                <section class="lower-grid"><div class="form-panel" id="add-entry"><div class="panel-heading"><div><p class="eyebrow">New record</p><h2>Add fuel entry</h2></div><span class="form-step">01 <i>/</i> 01</span></div><form><div class="field-group"><label for="station">Gas station brand</label><div class="select-wrap"><select id="station"><option value="shell">Shell</option><option value="orlen">ORLEN</option></select><span>⌄</span></div></div><div class="field-row"><div class="field-group"><label for="date">Date</label><input id="date" type="date"></div><div class="field-group"><label for="liters">Liters</label><div class="input-suffix"><input id="liters" type="number" placeholder="0.00" step="0.01"><span>L</span></div></div></div><div class="field-row"><div class="field-group"><label for="amount">Total amount</label><div class="input-suffix"><input id="amount" type="number" placeholder="0" step="1"><span>Kč</span></div></div><div class="field-group"><label for="price">Price per liter <em>Optional</em></label><div class="input-suffix"><input id="price" type="number" placeholder="0.00" step="0.01"><span>Kč/L</span></div></div></div><button class="submit-button" type="button">Save fuel entry <span>→</span></button></form></div>
-                    <div class="entries-panel" id="entries"><div class="panel-heading"><div><p class="eyebrow">Latest activity</p><h2>Recent entries</h2></div><button class="round-arrow" aria-label="View all entries">↗</button></div><div class="entry-list"><article class="entry-item"><div class="entry-brand shell-logo">S<span>hell</span></div><div class="entry-details"><strong>45.20 L <span>·</span> Shell</strong><small>18 September 2026</small></div><div class="entry-amount"><strong>1,240 Kč</strong><small>27.43 Kč/L</small></div></article><article class="entry-item"><div class="entry-brand orlen-logo">ORLEN</div><div class="entry-details"><strong>52.80 L <span>·</span> ORLEN</strong><small>14 September 2026</small></div><div class="entry-amount"><strong>1,480 Kč</strong><small>28.03 Kč/L</small></div></article><article class="entry-item"><div class="entry-brand shell-logo">S<span>hell</span></div><div class="entry-details"><strong>28.90 L <span>·</span> Shell</strong><small>07 September 2026</small></div><div class="entry-amount"><strong>780 Kč</strong><small>27.00 Kč/L</small></div></article></div><button class="view-all" type="button">View all entries <span>→</span></button></div>
+                <section class="hero">
+                    <div>
+                        <p class="eyebrow">Overview</p>
+                        <h1>Good morning, Vaclav<span>.</span></h1>
+                        <p class="intro-copy">Keep your fuel spending in sight.</p>
+                    </div>
+                    <button class="primary-button" type="button"><span>＋</span> Add entry</button>
                 </section>
-                <p class="footer-note"><span>✦</span> All amounts are tracked in Czech koruna <strong>·</strong> Limits reset on the 1st of each month.</p>
+
+                <section class="summary-grid" aria-label="Monthly summary">
+                    <article class="summary-card stats-card">
+                        <p class="eyebrow">Spent this month</p>
+                        <strong id="combined-used">0 Kč</strong>
+                        <span id="combined-caption">0% of 10,000 Kč monthly limit</span>
+                    </article>
+                    <article class="summary-card limit-card" data-card="shell">
+                        <div class="station-row">
+                            <span class="station-badge badge-shell">Shell</span>
+                            <span class="status-pill">Active</span>
+                        </div>
+                        <strong class="card-used">0</strong>
+                        <div class="progress-track"><div class="progress-fill shell-fill"></div></div>
+                        <div class="limit-meta">
+                            <span class="card-remaining">5,000 Kč remaining</span>
+                            <span class="card-percent">0%</span>
+                        </div>
+                    </article>
+                    <article class="summary-card limit-card" data-card="orlen">
+                        <div class="station-row">
+                            <span class="station-badge badge-orlen">ORLEN</span>
+                            <span class="status-pill">Active</span>
+                        </div>
+                        <strong class="card-used">0</strong>
+                        <div class="progress-track"><div class="progress-fill orlen-fill"></div></div>
+                        <div class="limit-meta">
+                            <span class="card-remaining">5,000 Kč remaining</span>
+                            <span class="card-percent">0%</span>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="panel-grid">
+                    <div class="form-panel" id="add-entry">
+                        <div class="panel-heading">
+                            <div>
+                                <p class="eyebrow">New record</p>
+                                <h2>Add fuel entry</h2>
+                            </div>
+                            <span class="form-step">01 / 01</span>
+                        </div>
+
+                        <form id="fuel-form">
+                            <div class="field-group">
+                                <label for="station">Gas station</label>
+                                <div class="select-wrap">
+                                    <select id="station" name="station">
+                                        <option value="shell">Shell</option>
+                                        <option value="orlen">ORLEN</option>
+                                    </select>
+                                    <span>⌄</span>
+                                </div>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field-group">
+                                    <label for="date">Date</label>
+                                    <input id="date" name="date" type="date">
+                                </div>
+                                <div class="field-group">
+                                    <label for="liters">Liters <em>Optional</em></label>
+                                    <div class="input-suffix">
+                                        <input id="liters" name="liters" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+                                        <span>L</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field-row">
+                                <div class="field-group">
+                                    <label for="amount">Total amount</label>
+                                    <div class="input-suffix">
+                                        <input id="amount" name="amount" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required>
+                                        <span>Kč</span>
+                                    </div>
+                                </div>
+                                <div class="field-group">
+                                    <label for="price">Price/L <em>Optional</em></label>
+                                    <div class="input-suffix">
+                                        <input id="price" name="price" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+                                        <span>Kč/L</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="submit-button" type="submit">Save fuel entry <span>→</span></button>
+                        </form>
+                    </div>
+
+                    <aside class="entries-panel" id="entries">
+                        <div class="panel-heading">
+                            <div>
+                                <p class="eyebrow">Latest activity</p>
+                                <h2>Recent entries</h2>
+                            </div>
+                            <button class="round-arrow" type="button" aria-label="View all entries">↗</button>
+                        </div>
+
+                        <div class="entry-list" id="entry-list"></div>
+                        <button class="view-all" type="button">View all entries <span>→</span></button>
+                    </aside>
+                </section>
             </div>
         </main>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
     <script src="script.js"></script>
