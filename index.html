@@ -70,62 +70,6 @@
                 </section>
 
                 <section class="panel-grid">
-                    <div class="form-panel" id="add-entry">
-                        <div class="panel-heading">
-                            <div>
-                                <p class="eyebrow">New record</p>
-                                <h2>Add fuel entry</h2>
-                            </div>
-                            <span class="form-step">01 / 01</span>
-                        </div>
-
-                        <form id="fuel-form">
-                            <div class="field-group">
-                                <label for="station">Gas station</label>
-                                <div class="select-wrap">
-                                    <select id="station" name="station">
-                                        <option value="shell">Shell</option>
-                                        <option value="orlen">ORLEN</option>
-                                    </select>
-                                    <span>⌄</span>
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <div class="field-group">
-                                    <label for="date">Date</label>
-                                    <input id="date" name="date" type="date">
-                                </div>
-                                <div class="field-group">
-                                    <label for="liters">Liters <em>Optional</em></label>
-                                    <div class="input-suffix">
-                                        <input id="liters" name="liters" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
-                                        <span>L</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                <div class="field-group">
-                                    <label for="amount">Total amount</label>
-                                    <div class="input-suffix">
-                                        <input id="amount" name="amount" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required>
-                                        <span>Kč</span>
-                                    </div>
-                                </div>
-                                <div class="field-group">
-                                    <label for="price">Price/L <em>Optional</em></label>
-                                    <div class="input-suffix">
-                                        <input id="price" name="price" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
-                                        <span>Kč/L</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button class="submit-button" type="submit">Save fuel entry <span>→</span></button>
-                        </form>
-                    </div>
-
                     <aside class="entries-panel" id="entries">
                         <div class="panel-heading">
                             <div>
@@ -141,6 +85,65 @@
                 </section>
             </div>
         </main>
+    </div>
+
+    <div class="modal-backdrop" id="entry-modal" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="entry-modal-title">
+            <button class="modal-close" type="button" data-close-entry-modal aria-label="Close add entry modal">×</button>
+            <div class="panel-heading modal-heading">
+                <div>
+                    <p class="eyebrow">New record</p>
+                    <h2 id="entry-modal-title">Add fuel entry</h2>
+                </div>
+                <span class="form-step">01 / 01</span>
+            </div>
+
+            <form id="fuel-form">
+                <div class="field-group">
+                    <label for="station">Gas station</label>
+                    <div class="select-wrap">
+                        <select id="station" name="station">
+                            <option value="shell">Shell</option>
+                            <option value="orlen">ORLEN</option>
+                        </select>
+                        <span>⌄</span>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="date">Date</label>
+                        <input id="date" name="date" type="date">
+                    </div>
+                    <div class="field-group">
+                        <label for="liters">Liters <em>Optional</em></label>
+                        <div class="input-suffix">
+                            <input id="liters" name="liters" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+                            <span>L</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="amount">Total amount</label>
+                        <div class="input-suffix">
+                            <input id="amount" name="amount" type="number" min="0" step="1" inputmode="numeric" placeholder="0" required>
+                            <span>Kč</span>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="price">Price/L <em>Optional</em></label>
+                        <div class="input-suffix">
+                            <input id="price" name="price" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00">
+                            <span>Kč/L</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="submit-button" type="submit">Save fuel entry <span>→</span></button>
+            </form>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

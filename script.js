@@ -1,6 +1,9 @@
 const dateField = document.querySelector('#date');
 const fuelForm = document.querySelector('#fuel-form');
 const entryList = document.querySelector('#entry-list');
+const modal = document.querySelector('#entry-modal');
+const openEntryButtons = document.querySelectorAll('[data-open-entry-modal], .primary-button');
+const closeEntryButtons = document.querySelectorAll('[data-close-entry-modal]');
 const formStatus = document.querySelector('#form-status') || document.createElement('p');
 
 if (!formStatus.id) {
@@ -8,6 +11,42 @@ if (!formStatus.id) {
     formStatus.className = 'form-status';
     fuelForm?.append(formStatus);
 }
+
+function openEntryModal() {
+    modal?.classList.add('is-open');
+    modal?.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    setTimeout(() => {
+        const firstInput = document.querySelector('#station');
+        firstInput?.focus();
+    }, 50);
+}
+
+function closeEntryModal() {
+    modal?.classList.remove('is-open');
+    modal?.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+}
+
+openEntryButtons.forEach((button) => {
+    button.addEventListener('click', openEntryModal);
+});
+
+closeEntryButtons.forEach((button) => {
+    button.addEventListener('click', closeEntryModal);
+});
+
+modal?.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        closeEntryModal();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal?.classList.contains('is-open')) {
+        closeEntryModal();
+    }
+});
 
 const supabaseReady = window.supabase && window.GASSY_SUPABASE_URL && !window.GASSY_SUPABASE_URL.includes('YOUR_PROJECT');
 const supabaseClient = supabaseReady ? window.supabase.createClient(window.GASSY_SUPABASE_URL, window.GASSY_SUPABASE_ANON_KEY) : null;

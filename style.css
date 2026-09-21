@@ -584,6 +584,112 @@ body.dark-mode .progress-track {
     background: rgba(255,255,255,0.06);
 }
 
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(19, 24, 18, 0.48);
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+    z-index: 999;
+    padding: 24px;
+}
+
+.modal-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-panel {
+    width: min(640px, 100%);
+    background: rgba(255,255,255,0.96);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 22px 22px 18px;
+    transform: translateY(18px) scale(0.98);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    animation: modalIn 0.26s ease forwards;
+}
+
+.modal-backdrop.is-open .modal-panel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.modal-heading {
+    margin-bottom: 4px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.modal-panel {
+    position: relative;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(18px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.entry-item {
+    animation: fadeUp 0.32s ease both;
+}
+
+.entry-item:nth-child(2) { animation-delay: 0.04s; }
+.entry-item:nth-child(3) { animation-delay: 0.08s; }
+.entry-item:nth-child(4) { animation-delay: 0.12s; }
+.entry-item:nth-child(5) { animation-delay: 0.16s; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.summary-card,
+.form-panel,
+.entries-panel,
+.primary-button,
+.submit-button,
+.round-arrow {
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.summary-card:hover,
+.entries-panel:hover,
+.primary-button:hover,
+.submit-button:hover,
+.round-arrow:hover {
+    transform: translateY(-1px);
+}
+
+body.dark-mode .modal-panel {
+    background: rgba(31, 42, 31, 0.96);
+}
+
+body.dark-mode .modal-close {
+    background: rgba(145, 190, 131, 0.12);
+}
+
 body.dark-mode .theme-toggle {
     background: rgba(145, 190, 131, 0.12);
     color: var(--green);
