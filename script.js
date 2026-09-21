@@ -92,6 +92,12 @@ function renderEntries(entries) {
             </article>
         `;
     }).join('');
+
+    requestAnimationFrame(() => {
+        entryList.querySelectorAll('.entry-item').forEach((item, index) => {
+            item.style.animationDelay = `${index * 60}ms`;
+        });
+    });
 }
 
 function renderTotals(entries) {
